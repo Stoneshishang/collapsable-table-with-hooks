@@ -13,16 +13,17 @@ function App() {
     const result = await fetch("https://jsonplaceholder.typicode.com/users");
     const getResults = await result.json();
     setData(getResults);
-    console.log(getResults);
+    // console.log(getResults);
   }
 
   const toggleShown = (username) => {
+    console.log("----------------click--------------");
     console.log("username is: ", username);
     // slice method to return selected elements as new array object.
     const shownState = detailsShown.slice();
-    console.log("shownState is: ", shownState);
     //indexOf to search array for specied item
     const index = shownState.indexOf(username);
+    console.log("user name index is: ", index);
     //if item found remove item
     if (index >= 0) {
       //splice / adds / removes item
@@ -50,6 +51,7 @@ function App() {
                   </button>
                 </td>
               </tr>
+
               {detailsShown.includes(user.name) && (
                 <tr className='additional-info'>
                   <td colSpan='2'>{user.company.catchPhrase}</td>
