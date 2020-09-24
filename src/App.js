@@ -13,7 +13,7 @@ function App() {
     const result = await fetch("https://jsonplaceholder.typicode.com/users");
     const getResults = await result.json();
     setData(getResults);
-    // console.log(getResults);
+    console.log(getResults);
   }
 
   const toggleShown = (username) => {
