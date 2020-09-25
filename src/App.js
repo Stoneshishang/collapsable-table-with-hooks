@@ -19,8 +19,11 @@ function App() {
   const toggleShown = (username) => {
     console.log("----------------click--------------");
     console.log("username is: ", username);
+    console.log("detailsShown is: ", detailsShown);
+
     // slice method to return selected elements as new array object.
     const shownState = detailsShown.slice();
+    console.log("shownState is: ", shownState);
     //indexOf to search array for specied item
     const index = shownState.indexOf(username);
     console.log("user name index is: ", index);
@@ -43,6 +46,7 @@ function App() {
         <tbody>
           {data.map((user) => (
             <React.Fragment key={user.id}>
+              {/* {console.log("user in renderData is: ", user)} */}
               <tr>
                 <td>{user.name}</td>
                 <td>
@@ -55,6 +59,7 @@ function App() {
               {detailsShown.includes(user.name) && (
                 <tr className='additional-info'>
                   <td colSpan='2'>{user.company.catchPhrase}</td>
+                  {console.log("user in detailsShown is: ", user)}
                 </tr>
               )}
             </React.Fragment>
